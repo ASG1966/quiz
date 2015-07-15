@@ -32,9 +32,9 @@ nav span {
 div.izq {
   clear: both;
   float: left;
-  width: 40%;
+  width: 50%;
 }
 div.dch {
   float: right;
-  width: 40%;
+  width: 49%;
 }

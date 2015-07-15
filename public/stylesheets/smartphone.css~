@@ -13,7 +13,3 @@ body {
 footer, input {
   font-size: large;
 }
-div.izq, div.dch {
-  clear: both;
-  width: 100%;
-}
