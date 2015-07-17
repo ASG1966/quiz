@@ -17,7 +17,14 @@ exports.load = function(req, res, next, quizId) {
 
 // GET  /quizes
 exports.index = function(req, res) {
-   models.Quiz.findAll().then(
+   var buscar = '%';
+   if (req.query.search != undefined) {
+      buscar += req.query.search + '%';
+      buscar = buscar.replace("+","%");
+      buscar = buscar.replace(/\s+/g,"%");
+   }
+   console.log('buscar=' + buscar);
+   models.Quiz.findAll({where:["pregunta like ? ",buscar], order:"pregunta ASC"}).then(
       function(quizes) {
          res.render('quizes/index.ejs', {quizes: quizes});
       }
