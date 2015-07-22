@@ -82,7 +82,7 @@ exports.create = function(req, res) {
 exports.edit = function(req, res) {
    var quiz = req.quiz;  //autoload de instancia de quiz
    
-   res.render('quizes/edit', {quiz: req.quiz, errors:[]});
+   res.render('quizes/edit', {quiz: quiz, errors:[]});
 };
 
 // POST  /quizes/:id
