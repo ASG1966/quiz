@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         tema: {
          type: DataTypes.STRING,
-         defaultValue: 'otro'
+         defaultValue: 'Otro'
         }
       }
    );
