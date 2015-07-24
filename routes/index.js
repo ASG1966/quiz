@@ -23,15 +23,13 @@ router.get('/logout', sessionController.destroy); // destruir sesión
 router.get('/quizes',                      quizController.index);
 router.get('/quizes/:quizId(\\d+)',        quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+router.get('/author',                      quizController.author);
+router.get('/statistics',                  quizController.statistics);
 router.get('/quizes/new',                  sessionController.loginRequierd, quizController.new);
 router.post('/quizes/create',              sessionController.loginRequierd, quizController.create);
 router.get('/quizes/:quizId(\\d+)/edit',   sessionController.loginRequierd, quizController.edit);
 router.put('/quizes/:quizId(\\d+)',        sessionController.loginRequierd, quizController.update);
 router.delete('/quizes/:quizId(\\d+)',     sessionController.loginRequierd, quizController.destroy);
-
-router.get('/author', function(req, res) {
-  res.render('author', {errors:[]});
-});
 
 // Definición de rutas de comentarios
 router.get('/quizes/:quizId(\\d+)/comments/new',  commentController.new);

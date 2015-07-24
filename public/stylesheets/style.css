@@ -42,3 +42,14 @@ div.dch {
   float: right;
   width: 40%;
 }
+table.est th, table.est td {
+   border: solid 1px;
+   padding: 5px;
+}
+table.est th {
+   text-align: left;
+}
+table.est td {
+   text-align: right;
+}
+
