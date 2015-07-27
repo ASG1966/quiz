@@ -1,16 +1,14 @@
 <h3>Estadísticas</h3>
 <%
    var npreg = quizes.length;
+   var ncom = 0;
+   var media = 0;
    var ncom = comments.length;
    var media = (comments.length/quizes.length).toFixed(2);
    var con = 0;
    var i;
-   var ultQuiz = 0;
    for (i=0; i < quizes.length; i++) {
-      if (quizes[i].QuizId != ultQuiz) {
-         con++;
-         ultQuiz = quizes[i].QuizId;
-      }
+      if (quizes[i].Comments.length > 0) con++;
    }
    var sin = npreg - con;
 %>

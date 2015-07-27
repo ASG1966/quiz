@@ -57,17 +57,6 @@ exports.author = function(req, res) {
   res.render('author', {errors:[]});
 };
 
-// GET  /statistics
-exports.statistics = function(req, res) {
-   models.Quiz.findAll().then(
-   function(quizes) {
-      models.Comment.findAll({order: "QuizId"}).then(
-      function(comments) {
-         res.render('statistics', {quizes: quizes, comments: comments, errors:[]});
-      })
-   });
-};
-
 // GET  /quizes/new
 exports.new = function(req, res) {
    var quiz = models.Quiz.build(  // crea objeto quiz
